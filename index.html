@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1987 Porsche 959 | The Pinnacle of 80s Engineering</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    
+    <style>
+        #loading-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            z-index: 100;
+        }
+
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section h-screen flex items-center justify-center relative parallax">
+        <div class="absolute inset-0 bg-[#9b111e] bg-opacity-70 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('src/images/P-959-background.png')"></div>
+        <div class="text-center relative z-10 px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in-up text-white"
+                style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);">Porsche 959</h1>
+            <!--<button
+                class="bg-transparent border-2 border-white px-8 py-3 text-lg font-medium hover:bg-white hover:text-black transition duration-300 fade-in-up">
+                Scroll to Discover
+            </button>-->
+        </div>
+        <div class="scroll-down-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M19 12l-7 7-7-7" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- About the Car -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-[#9b111e]">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="slide-in-left">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">1987 Porsche 959</h2>
+                <p class="text-lg text-gray-300 mb-8">
+                    The Porsche 959 was a technological tour de force, a car so advanced that it seemed to come from the
+                    future.
+                    Designed to dominate both Group B rally racing and the open road, it featured innovations that
+                    wouldn't become
+                    mainstream for decades.
+                </p>
+                <div class="space-y-4">
+                    <div class="tech-spec-item">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Top Speed</h3>
+                                <p class="text-gray-400">317 km/h (197 mph)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-spec-item" style="transition-delay: 0.1s;">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Engine</h3>
+                                <p class="text-gray-400">2.85L twin-turbocharged flat-6</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-spec-item" style="transition-delay: 0.2s;">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Horsepower</h3>
+                                <p class="text-gray-400">450 hp @ 6500 rpm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-spec-item" style="transition-delay: 0.3s;">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">0-100 km/h</h3>
+                                <p class="text-gray-400">3.7 seconds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Three.JS -->
+            <div class="slide-in-right">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Options -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center slide-in-left">Signature Colors</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="color-option slide-in-right" style="transition-delay: 0.2s;">
+                    <div class="h-64 rounded-lg flex items-end p-6" style="background-color: #9b111e;">
+                        <h3 class="text-xl font-bold text-white">Ruby Red</h3>
+                    </div>
+                </div>
+                <div class="color-option slide-in-right" style="transition-delay: 0.4s;">
+                    <div class="h-64 rounded-lg flex items-end p-6" style="background-color: #C0C0C0;">
+                        <h3 class="text-xl font-bold text-white">Sliver</h3>
+                    </div>
+                </div>
+                <div class="color-option slide-in-right" style="transition-delay: 0.6s;">
+                    <div class="bg-white h-64 rounded-lg flex items-end p-6" style="background-color: #41424C;">
+                        <h3 class="text-xl font-bold text-white">Graphite </h3>
+                    </div>
+                </div>
+
+                <div class="color-option slide-in-right" style="transition-delay: 0.8s;">
+                    <div class="h-64 rounded-lg flex items-end p-6" style="background-color: #EAE0C8;">
+                        <h3 class="text-xl font-bold text-black">Perlglanzweiss</h3>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-12 text-lg text-gray-300 slide-in-left">
+                Each color finish, meticulously crafted for perfection. The Porsche 959 was available in a range of
+                exclusive colors that complemented its revolutionary design.
+            </p>
+        </div>
+    </section>
+
+    <!-- Technology Section 
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-black parallax"
+        style="background-image: url('')">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-white slide-in-left">Revolutionary
+                Technology</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-900 bg-opacity-80 p-8 rounded-lg slide-in-left">
+                    <h3 class="text-2xl font-bold mb-4 text-red-500">Advanced All-Wheel Drive</h3>
+                    <p class="text-gray-300">
+                        The 959 featured Porsche's first computer-controlled all-wheel-drive system, capable of varying
+                        torque
+                        distribution between front and rear axles depending on driving conditions. This technology was
+                        years
+                        ahead of its time and became the foundation for modern AWD systems.
+                    </p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-80 p-8 rounded-lg slide-in-right">
+                    <h3 class="text-2xl font-bold mb-4 text-red-500">Aerodynamic Mastery</h3>
+                    <p class="text-gray-300">
+                        With a drag coefficient of just 0.31, the 959's shape was optimized for high-speed stability.
+                        The adjustable ride height system could lower the car at speed to improve aerodynamics,
+                        while special ducts cooled the massive brakes.
+                    </p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-80 p-8 rounded-lg slide-in-left">
+                    <h3 class="text-2xl font-bold mb-4 text-red-500">Lightweight Construction</h3>
+                    <p class="text-gray-300">
+                        Porsche used advanced materials like aluminum, Kevlar, and Nomex to keep weight down while
+                        maintaining
+                        structural rigidity. The body panels were made from aluminum and reinforced plastic composites,
+                        making the 959 both light and strong.
+                    </p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-80 p-8 rounded-lg slide-in-right">
+                    <h3 class="text-2xl font-bold mb-4 text-red-500">Twin-Turbo Power</h3>
+                    <p class="text-gray-300">
+                        The sequential twin-turbo system eliminated turbo lag by using a small turbo at low RPMs and a
+                        larger
+                        one at higher revs. This innovative setup delivered smooth, linear power throughout the rev
+                        range,
+                        a feat that was revolutionary in the 1980s.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+    <!-- Timeline Section -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-[#EAE0C8]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center slide-in-left text-[#41424C]">The 959 Legacy
+            </h2>
+            <div class="relative">
+                <div class="absolute left-1/2 h-full w-1 bg-red-600 transform -translate-x-1/2"></div>
+                <div class="mb-12 timeline-item">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                            <h3 class="text-2xl font-bold mb-2 text-[#41424C]">1981</h3>
+                            <p class="text-[#41424C] opacity-[70%] w-5/6">
+                                Porsche begins secret development of the 959 under the "Gruppe B" project, aiming to
+                                create the most advanced rally and sports car of its time.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-8">
+                            <img src="src/images/P-959-dev.png" alt="Porsche Gruppe B development"
+                                class="w-[536px] h-[302px]  rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12 timeline-item">
+                    <div class="flex flex-col md:flex-row-reverse items-center">
+                        <div class="w-full ml-20 md:w-1/2 md:pl-8 mb-4 md:mb-0">
+                            <h3 class="text-2xl font-bold mb-2 text-[#41424C]">1983</h3>
+                            <p class="text-[#41424C] opacity-[70%] w-5/6">
+                                Porsche unveils the Gruppe B prototype at the Frankfurt Motor Show, showing off
+                                all-wheel drive, twin-turbo technology, and advanced materials.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pr-8">
+                            <img src="src/images/P-959-gruppeB.png" alt="Porsche Gruppe B prototype"
+                                class="w-[536px] h-[302px] rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12 timeline-item">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                            <h3 class="text-2xl font-bold mb-2 text-[#41424C]">1986</h3>
+                            <p class="text-[#41424C] opacity-[70%] w-5/6">
+                                The production version of the 959 debuts, priced at $225,000 — making it the most
+                                expensive production car of its era.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-8">
+                            <img src="src/images/P-959-debut.webp" alt="Porsche 959 debut"
+                                class="w-[536px] max-h-[302px] rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12 timeline-item">
+                    <div class="flex flex-col md:flex-row-reverse items-center">
+                        <div class="w-full ml-20 md:w-1/2 md:pl-8 mb-4 md:mb-0">
+                            <h3 class="text-2xl font-bold mb-2 text-[#41424C]">1987</h3>
+                            <p class="text-[#41424C] opacity-[70%] w-5/6">
+                                The Porsche 959 sets a production car speed record of 317 km/h (197 mph), becoming the
+                                fastest street-legal car in the world.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pr-8">
+                            <img src="src/images/P-959-speed.png" alt="Porsche 959 speed record"
+                                class="w-[536px] max-h-[302px] rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                            <h3 class="text-2xl font-bold mb-2 text-[#41424C]">Today</h3>
+                            <p class="text-[#41424C] opacity-[70%] w-5/6">
+                                The Porsche 959 remains one of the most collectible and influential supercars, with
+                                pristine examples valued at over $2 million. Its technology continues to inspire modern
+                                Porsche models.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-8">
+                            <img src="src/images/P-959-today.webp" alt="Modern Porsche inspired by 959"
+                                class="w-[536px] max-h-[302px] rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA
+    <section class="py-32 px-4 md:px-8 lg:px-16 smoke-bg relative">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 fade-in-up"></h2>
+            <p class="text-xl md:text-2xl mb-10 text-gray-300 fade-in-up">
+                
+            </p>
+            <button
+                class="bg-red-600 hover:bg-red-700 text-white px-12 py-4 text-xl font-bold rounded-full transition duration-300 transform hover:scale-105 fade-in-up">
+                
+            </button>
+        </div>
+    </section> -->
+
+    <footer class="py-8 px-4 text-center text-gray-500 text-sm bg-black">
+        <p>© Porsche 959.</p>
+    </footer>
+
+    <script src="src/index.js"></script>
+
+
+
+</body>
+
+</html>
