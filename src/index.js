@@ -120,9 +120,9 @@ scene.add(modelGroup);
 // Load the model
 const loader = new GLTFLoader();
 loader.load(
-    './models/porsche_959.glb',
-    '/P-959/models/porsche_959.glb', 
-    './src/models/porsche_959.glb',
+
+    'src/models/porsche_959.glb',
+
     function (gltf) {
         const box = new THREE.Box3().setFromObject(gltf.scene);
         const center = box.getCenter(new THREE.Vector3());
