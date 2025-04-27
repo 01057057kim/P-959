@@ -12,7 +12,7 @@ body {
 }
 
 .hero-section {
-    background-image: url('src/images/P-959-background.png');
+    background-image: url('./images/P-959-background.png');
     background-size: cover;
     background-position: center;
     animation: fadeIn 1.5s ease-in-out;
