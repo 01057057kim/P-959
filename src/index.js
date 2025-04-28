@@ -73,15 +73,14 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const loadingScreen = document.createElement('div');
 loadingScreen.className = 'loading-screen';
+loadingScreen.innerHTML = `
+  <span class="loader"></span>
+  <div class="loading-text">Loading Porsche 959</div>
+`;
 
-const spinner = document.createElement('div');
-spinner.className = 'loading-spinner';
-loadingScreen.appendChild(spinner);
-
-const loadingText = document.createElement('div');
-loadingText.className = 'loading-text';
-loadingText.textContent = 'Loading Porsche 959...';
-loadingScreen.appendChild(loadingText);
+const modelContainer = document.getElementById('porsche-model-container');
+modelContainer.style.position = 'relative';
+modelContainer.appendChild(loadingScreen);
 
 const container = document.getElementById('porsche-model-container');
 const scene = new THREE.Scene();
@@ -172,16 +171,9 @@ loader.load(
             loadingScreen.remove();
         }, 500);
     },
-    function (xhr) {
-        if (xhr.lengthComputable) {
-            const percentComplete = Math.round((xhr.loaded / xhr.total) * 100);
-            loadingText.textContent = `Loading Porsche 959... ${percentComplete}%`;
-        }
-    },
+    undefined,
     function (error) {
         console.error(error);
-        loadingText.textContent = 'Error loading model';
-        spinner.style.display = 'none';
     }
 );
 
