@@ -121,7 +121,7 @@ scene.add(modelGroup);
 const loader = new GLTFLoader();
 loader.load(
 
-    'src/models/porsche_959.glb',
+    '/P-959/models/porsche_959.glb',
 
     function (gltf) {
         const box = new THREE.Box3().setFromObject(gltf.scene);
