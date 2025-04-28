@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-   
+    
     const fadeInUpObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -71,6 +71,18 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+const loadingScreen = document.createElement('div');
+loadingScreen.className = 'loading-screen';
+
+const spinner = document.createElement('div');
+spinner.className = 'loading-spinner';
+loadingScreen.appendChild(spinner);
+
+const loadingText = document.createElement('div');
+loadingText.className = 'loading-text';
+loadingText.textContent = 'Loading Porsche 959...';
+loadingScreen.appendChild(loadingText);
+
 const container = document.getElementById('porsche-model-container');
 const scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(
@@ -94,6 +106,13 @@ container.appendChild(renderer.domElement);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableZoom = false;
 controls.autoRotate = false;
+
+controls.enablePan = false;
+controls.mouseButtons = {
+    LEFT: THREE.MOUSE.ROTATE,
+    MIDDLE: null,
+    RIGHT: null  
+};
 
 // Lighting setup
 const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
@@ -146,10 +165,23 @@ loader.load(
         });
         
         modelGroup.add(gltf.scene);
+
+        loadingScreen.classList.add('hidden');
+
+        setTimeout(() => {
+            loadingScreen.remove();
+        }, 500);
     },
-    undefined,
+    function (xhr) {
+        if (xhr.lengthComputable) {
+            const percentComplete = Math.round((xhr.loaded / xhr.total) * 100);
+            loadingText.textContent = `Loading Porsche 959... ${percentComplete}%`;
+        }
+    },
     function (error) {
         console.error(error);
+        loadingText.textContent = 'Error loading model';
+        spinner.style.display = 'none';
     }
 );
 
